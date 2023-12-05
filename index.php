@@ -1,8 +1,7 @@
 <?php
-if(isset($_GET['login'])){
-  echo ($_GET['login']);
-}
-  
+
+  session_start();
+
 ?>
 <html>
   <head>
@@ -47,10 +46,20 @@ if(isset($_GET['login'])){
                 </div>
       
                 <?php
-                 if(isset($_GET['login']) && $_GET['login']=='error'){
+                 if(isset($_GET['login']) && $_GET['login']=='erro1'){
                 ?>
                   <div class="text-danger">
                     Usuário ou senha invalido(s)
+                  </div>
+                <?php
+                  }
+                ?>
+
+                <?php
+                 if(isset($_GET['login']) && $_GET['login']=='erro2'){
+                ?>
+                  <div class="text-danger">
+                    Faça login antes de acessar as páginas protegidas.
                   </div>
                 <?php
                   }
